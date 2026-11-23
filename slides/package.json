@@ -1,0 +1,13 @@
+{
+  "name": "modernes-java-in-der-praxis-slides",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev module-00.md --open"
+  },
+  "dependencies": {
+    "@slidev/cli": "52.19.1",
+    "@slidev/types": "52.19.1",
+    "vue": "3.5.42"
+  }
+}

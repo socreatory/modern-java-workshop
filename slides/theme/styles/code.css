@@ -1,0 +1,13 @@
+:root {
+  --slidev-code-font-family: var(--font-mono);
+  --slidev-code-font-size: var(--text-code);
+  --slidev-code-line-height: var(--leading-code);
+  --slidev-code-padding: 0px;
+  --slidev-code-margin: 0;
+  --slidev-code-radius: 0;
+  --slidev-code-background: transparent;
+}
+
+.slidev-layout code {
+  font-family: var(--font-mono);
+}

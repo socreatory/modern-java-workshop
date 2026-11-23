@@ -1,0 +1,39 @@
+:root {
+  --color-text: #000000;
+  --color-surface: #faf8f2;
+  --color-surface-tint: #e6f9fd;
+  --color-link: #2840d8;
+
+  --font-sans: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Ubuntu Sans Mono', ui-monospace, Consolas, Menlo, monospace;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  --slide-pad-x: 60px;
+  --text-title: 28px;
+  --text-body: 17px;
+  --text-code: 15px;
+  --leading-body: 1.5;
+  --leading-code: 21px;
+
+  --gap-title: 24px;
+  --gap-block: 16px;
+  --gap-list: 10px;
+  --pad-top: 38px;
+  --pad-bottom: 14px;
+  --soc-cyan: #00d7f7;
+  --soc-green: #2ae78b;
+  --soc-bar-height: 30px;
+  --soc-text-footer: 12px;
+}
+
+:root {
+  --slidev-transition-duration: 200ms;
+}
+
+.hc-snug {
+  --gap-title: 15px;
+  --gap-block: 10px;
+  --gap-list: 6px;
+}

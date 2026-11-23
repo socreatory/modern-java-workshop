@@ -1,0 +1,53 @@
+.slidev-layout.hc-content {
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.slidev-layout.hc-content h1 {
+  font-size: var(--text-title);
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+  margin: 0 0 var(--gap-title);
+  color: var(--color-text);
+}
+
+.slidev-layout.hc-content h1 code {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1em;
+  line-height: 0;
+}
+
+.hc-body {
+  flex: 1;
+  position: relative;
+  padding: var(--pad-top) var(--slide-pad-x) var(--pad-bottom);
+  min-height: 0;
+}
+
+.hc-body p {
+  margin: 0 0 14px;
+}
+
+.hc-body > * + * {
+  margin-top: var(--gap-block);
+}
+
+.hc-text p:last-child {
+  margin-bottom: 0;
+}
+
+.hc-body > h1 + * {
+  margin-top: 0;
+}
+
+.slidev-vclick-target {
+  transition: none;
+}
