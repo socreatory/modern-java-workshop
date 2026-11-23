@@ -44,6 +44,31 @@
   font-weight: 600;
 }
 
+.slidev-layout .hc-code pre.shiki {
+  background: transparent !important;
+}
+
+.slidev-layout.hc-cover.soc-cover {
+  color: var(--color-text);
+  background: var(--color-surface);
+  --text-cover-eyebrow: 26px;
+  --text-cover-title: 52px;
+  --text-cover-subtitle: 24px;
+}
+
+.soc-cover .hc-cover-body {
+  padding: 0 var(--cover-pad-x);
+  gap: 18px;
+}
+
+.soc-cover .hc-eyebrow {
+  font-weight: var(--weight-normal);
+}
+
+.slidev-layout.hc-cover.soc-cover h1 {
+  font-weight: 600;
+}
+
 .slidev-layout.soc-title {
   padding: 0;
   height: 100%;

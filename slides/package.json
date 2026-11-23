@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "slidev module-00.md --open"
+    "dev": "slidev module-00.md --open",
+    "dev:module-05": "slidev module-05.md --open"
   },
   "dependencies": {
     "@slidev/cli": "52.19.1",

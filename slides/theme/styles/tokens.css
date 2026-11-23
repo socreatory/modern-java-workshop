@@ -26,6 +26,10 @@
   --soc-green: #2ae78b;
   --soc-bar-height: 30px;
   --soc-text-footer: 12px;
+  --blank-line: 1;
+  --cover-pad-x: 40px;
+  --text-statement: 56px;
+  --gap-group: 32px;
 }
 
 :root {
@@ -36,4 +40,5 @@
   --gap-title: 15px;
   --gap-block: 10px;
   --gap-list: 6px;
+  --gap-group: 20px;
 }

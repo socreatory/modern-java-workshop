@@ -7,6 +7,10 @@
   margin: 0 0.2em;
 }
 
+.hc-cover .hc-dot {
+  margin: 0;
+}
+
 .hc-text a {
   color: var(--color-link);
   text-decoration: underline;
@@ -51,6 +55,26 @@
   flex: 0 0 300px;
 }
 
+.hc-row.hc-row-pair-split {
+  gap: 0;
+}
+
+.hc-row.hc-row-pair-split > .hc-row-main {
+  flex: 0 0 50%;
+  min-width: 0;
+}
+
+.hc-row.hc-row-pair-split > .hc-row-aside {
+  position: static;
+  width: auto;
+  flex: 0 0 50%;
+  min-width: 0;
+}
+
+.hc-row.hc-row-pair-split:not(.hc-row-baseline) {
+  align-items: center;
+}
+
 .hc-table table {
   width: 100%;
   border-collapse: collapse;
@@ -70,10 +94,57 @@
   vertical-align: middle;
 }
 
+.hc-table tr.slidev-vclick-hidden td {
+  border-color: transparent;
+  border-style: inset;
+}
+
 .hc-table th {
   background: var(--color-surface-tint);
   font-weight: var(--weight-bold);
   text-align: center;
+}
+
+.hc-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.hc-column {
+  border: 1px solid var(--color-line);
+  display: flex;
+  flex-direction: column;
+}
+
+.hc-column-head {
+  background: var(--color-surface-tint);
+  border-bottom: 1px solid var(--color-line);
+  font-weight: var(--weight-bold);
+  text-align: center;
+  padding: 8px 12px;
+}
+
+.hc-column-body {
+  padding: 12px 16px;
+  flex: 1;
+}
+
+.hc-column-items {
+  margin: 0;
+  padding-left: 1.4em;
+  list-style: disc;
+}
+
+.hc-column-items li + li {
+  margin-top: var(--gap-list);
+}
+
+.hc-body > h1 + .hc-columns:last-child .hc-column-items li + li {
+  margin-top: calc(2 * var(--gap-list));
 }
 
 .hc-table-dense table {
@@ -115,6 +186,26 @@
 
 .hc-list li::marker {
   color: var(--color-text);
+}
+
+.hc-statement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 56px;
+}
+
+.hc-statement-line {
+  font-size: var(--text-statement);
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+}
+
+.hc-statement-minor {
+  font-size: var(--text-body);
+  font-weight: var(--weight-normal);
 }
 
 .hc-diagram svg {
