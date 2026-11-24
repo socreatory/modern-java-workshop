@@ -1,0 +1,75 @@
+name: Folien auf GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'slides/**'
+      - '.github/workflows/slides.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: slides
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: slides/package-lock.json
+
+      - run: npm ci
+
+      - name: Folien bauen
+        run: |
+          BASE="/${GITHUB_REPOSITORY#*/}"
+          for deck in module-00 module-05; do
+            npx slidev build "$deck.md" --base "$BASE/$deck/" --out "dist/$deck"
+          done
+
+      - name: Übersichtsseite erzeugen
+        run: |
+          cat > dist/index.html <<'EOF'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8">
+            <title>Modernes Java in der Praxis – Folien</title>
+          </head>
+          <body>
+            <h1>Modernes Java in der Praxis – Folien</h1>
+            <ul>
+              <li><a href="module-00/">Modul 0 – Einführung</a></li>
+              <li><a href="module-05/">Modul 5 – Ausblick und Abschluss</a></li>
+            </ul>
+          </body>
+          </html>
+          EOF
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: slides/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
