@@ -29,7 +29,13 @@ Die Übungen liegen in den `exercise`-Paketen, die Musterlösungen in den `solut
 
 ## Modul 2 – Die Domäne im Code
 
-- *Noch nicht ausgearbeitet.*
+Alle drei Übungen nutzen denselben Medikationsplan (Wirkstoffe, Tabletten, Infusionen). Das Modell wächst von Übung zu Übung, jede Übung hat aber ihr eigenes, lauffähiges Paket. Alle Daten sind frei erfunden und keine medizinische Beratung.
+
+- Type Patterns, `when`, `case null` und Dominanz (Übung 2.1: Dosierungen bewerten)
+- Exhaustiveness: `switch` ohne `default` über `Result<T>`, neuen Subtyp einführen (Übung 2.2)
+- Record Patterns, verschachtelt und mit `when`; Wirkstoffmengen berechnen (Übung 2.3)
+
+Jede Übung hat eine kleine Bonus-Aufgabe (`Bonus…`-Klasse) für Schnelle. Die Demos liegen in den `module_2_demos`-Paketen. Die Exhaustiveness-Demo (`demo_2_3`) zeigt den Compile-Fehler: `Patch` im `sealed`-Interface und im Record einkommentieren, dann meldet der `switch` ohne `default` einen Fehler. Die Demo `demo_2_4` baut eine verkettete Liste als algebraischen Datentyp (Sealed Interface plus Records) und wertet sie mit Record Patterns aus. Die Demo zu Primitive Types in Patterns (JEP 507) liegt unter `module-02/scripts/demos/demo_2_5/` und läuft nicht über Maven, sondern mit JDK 25: `java --enable-preview --source 25 PrimitivePatternsDemo.java`. Das Feature ist in Java 25 ein Preview-Feature (drittes Preview). In JDK 28 wird die Preview-Implementierung laut OpenJDK entfernt; das Feature soll neu entworfen werden.
 
 ## Modul 3 – Nebenläufigkeit im Alltag
 
@@ -44,4 +50,8 @@ Mit JDK 27 kompiliert `module-03` nicht, denn in Java 27 hat sich die API noch e
 
 ## Modul 4 – Collections, Streams und Ausblick
 
-- *Noch nicht ausgearbeitet.*
+- Sequenced Collections (Übung 4.1)
+- Stream Gatherers (Übung 4.2)
+- Überblick: HTTP/3 im HTTP Client
+
+Die HTTP/3-Demo liegt unter `module-04/scripts/demos/demo_4_3/` und läuft nicht über Maven, sondern mit JDK 26 oder neuer: `java Http3Demo.java`. `HttpClient.Version.HTTP_3` gibt es erst ab Java 26 (JEP 517).
